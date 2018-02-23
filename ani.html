@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<script language="javascript">
+function getvalues(){
+//alert("hi");
+//alert(document.form1.firstname.value);
+var vals="";
+for(var i=0; i<document.form1.country.length; i++){
+   if(document.form1.country[i].selected){
+     vals +="," + document.form1.country[i].value;
+   }
+}
+//alert(vals);
+document.getElementById('display').innerHTML="Firstname: " + document.form1.firstname.value; 
+document.getElementById('display1').innerHTML="lastname: "+ document.form1.lastname.value;  
+document.getElementById('display2').innerHTML="Message: " + document.form1.message.value; 
+document.getElementById('display3').innerHTML="gender: "+document.form1.gender.value;
+document.getElementById('display4').innerHTML="country: " + vals;
+//alert(document.form1.country.length);
+
+document.getElementById('display5').innerHTML= "course: " + document.form1.course.value;
+}
+</script>
+</head>
+<body>
+<form name="form1">
+<p id="display"></p> 
+<p id="display1"></p>
+<p id="display2"></p>
+<p id="display3"></p>
+<p id="display4"></p>
+<p id="display5"></p>
+
+  First name:
+  <input type="text" name="firstname" id="firstname"required>
+  <br>
+  lastname:
+  <input type="text" name="lastname">
+  <br>
+ Address:
+ <textarea name="message" rows="10" cols="30"></textarea>
+<br><br>
+
+ Gender:
+<input type="radio" name="gender" value="male"checked>Male
+<input type="radio" name="gender" value="female">Female
+<br><br>
+
+ Select course:<select name="course">
+<option value="ap">ap</option>
+<option value="ms">ms</option>
+<option value="bd">bd</option>
+</select>
+<br><br><br><br>
+
+ Select country:<select name="country" multiple>
+<option value="ind">ind</option>
+<option value="pak">pak</option>
+<option value="sri">sri</option>
+<option value="ban">ban</option>
+<option value="usa">usa</option>
+</select>
+<br><br>
+
+<input type="submit" value="Submit" onclick="getvalues();return false;">
+
+<br><br><br>
+
+<br><br>
+</form>
+<br><br>
+</body>
+</html>
+
+
+
+
+
